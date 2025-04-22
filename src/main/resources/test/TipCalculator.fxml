@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="test.TipCalculator"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="test.TipCalculatorController"
+      alignment="CENTER" spacing="20" prefWidth="800" prefHeight="600"
+      stylesheets="@../styles.css">
 
-</AnchorPane>
+    <Label text="Tip Calculator" styleClass="title"/>
+
+    <GridPane hgap="10" vgap="15" alignment="CENTER">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+
+        <Label text="Bill Amount:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="billAmountField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Tip Percentage:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="tipPercentageField" text="15" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Label text="'%'" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+    </GridPane>
+
+    <Button text="Calculate" onAction="#onCalculateClick" styleClass="menu-button"/>
+    <Label fx:id="resultLabel" text="" styleClass="result-text"/>
+
+    <Button text="Home" onAction="#onHomeClick" styleClass="home-button"/>
+</VBox>

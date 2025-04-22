@@ -1,8 +1,8 @@
-module java.test.test {
+module test {
     requires javafx.controls;
     requires javafx.fxml;
     requires org.json;
 
-    opens java.test to javafx.fxml;
-    exports java.test;
+    opens test to javafx.fxml;
+    exports test;
 }

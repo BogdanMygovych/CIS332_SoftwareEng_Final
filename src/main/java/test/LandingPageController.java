@@ -82,7 +82,7 @@ public class LandingPageController {
     private void onVerseClick(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("VerseOfTheDay.fxml"));
-            Scene scene = new Scene(loader.load(), 1200, 600); // adjust dimensions if needed
+            Scene scene = new Scene(loader.load(), 600, 1000); // adjust dimensions if needed
             scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

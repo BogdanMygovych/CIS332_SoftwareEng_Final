@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="test.VerseOfTheDay"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="test.VerseOfTheDayController"
+      alignment="CENTER" spacing="20" stylesheets="@../styles.css">
 
-</AnchorPane>
+    <Label text="Verse of the Day" styleClass="title"/>
+
+    <ImageView fx:id="verseImage" fitWidth="600" fitHeight="400" preserveRatio="true" />
+
+    <Label fx:id="verseText" wrapText="true" textAlignment="CENTER" styleClass="verse-text"/>
+    <Label fx:id="verseReference" styleClass="verse-reference"/>
+    <Button text="Next Verse" onAction="#onNextVerseClick" styleClass="menu-button"/>
+
+
+
+    <Button text="Home" onAction="#onHomeClick" styleClass="home-button"/>
+</VBox>

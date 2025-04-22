@@ -7,8 +7,11 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="lib" level="project" />
+<<<<<<< HEAD
     <orderEntry type="library" name="libs" level="project" />
+=======
+    <orderEntry type="sourceFolder" forTests="false" />
+>>>>>>> 8ac3852c095ab70078162cad401e8ea9cb1c18c7
   </component>
 </module>

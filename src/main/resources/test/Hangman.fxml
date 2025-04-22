@@ -1,14 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?> <!-- ✅ Required for <Insets> to work -->
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="test.Hangman"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="test.HangmanController"
+      alignment="TOP_CENTER" spacing="20" prefWidth="800" prefHeight="600"
+      stylesheets="@../styles.css">
 
-</AnchorPane>
+    <Label text="Hangman" styleClass="title"/>
+    <Label fx:id="hangmanGraphic" text="" styleClass="hangman-graphic"/>
+    <Label fx:id="wordDisplay" text="" styleClass="word-display"/>
+    <Label text="Incorrect guesses:"/>
+    <Label fx:id="incorrectGuesses" text="" styleClass="incorrect-display"/>
+
+    <TilePane fx:id="letterButtons"
+              hgap="10" vgap="10"
+              prefColumns="7"
+              alignment="CENTER"
+              maxWidth="600">
+        <padding>
+            <Insets top="10" bottom="10" left="20" right="20"/>
+        </padding>
+    </TilePane>
+
+    <VBox spacing="10" alignment="CENTER">
+        <Button text="New Word" onAction="#onNewWordClick"/>
+        <Button text="Home" onAction="#onHomeClick" styleClass="home-button"/>
+    </VBox>
+</VBox>

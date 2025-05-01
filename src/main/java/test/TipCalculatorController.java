@@ -16,6 +16,16 @@ public class TipCalculatorController {
     @FXML private Label resultLabel;
 
     @FXML
+    public void initialize() {
+        javafx.application.Platform.runLater(() -> {
+            Scene scene = billAmountField.getScene();
+            if (scene != null) {
+                UserSession.applySettings(scene);
+            }
+        });
+    }
+
+    @FXML
     private void onCalculateClick() {
         try {
             double bill = Double.parseDouble(billAmountField.getText());

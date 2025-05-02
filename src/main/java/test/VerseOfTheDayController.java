@@ -9,8 +9,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.Node;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
-
-import java.io.*;
+import java.io.InputStream;
+import java.io.IOException;
 import java.util.*;
 
 public class VerseOfTheDayController {
@@ -19,11 +19,24 @@ public class VerseOfTheDayController {
     @FXML private Label verseReference;
     @FXML private ImageView verseImage;
 
+    @FXML
+    public void initialize() {
+        loadRandomVerseAndImage();
+
+
+        javafx.application.Platform.runLater(() -> {
+            Scene scene = verseText.getScene(); 
+            if (scene != null) {
+                UserSession.applySettings(scene);
+            }
+        });
+    }
+
     private final List<String> imagePaths = List.of(
-            "/images/verse1.png", // Psalm 119:105
-            "/images/verse2.png", // Jeremiah 29:11
-            "/images/verse3.png", // Psalm 46:10
-            "/images/verse4.png"  // Proverbs 3:5
+            "/images/verse1.png",
+            "/images/verse2.png",
+            "/images/verse3.png",
+            "/images/verse4.png"
     );
 
     private final List<String> verses = List.of(
@@ -32,11 +45,6 @@ public class VerseOfTheDayController {
             "Be still, and know that I am God.|Psalm 46:10",
             "Trust in the Lord with all your heart.|Proverbs 3:5"
     );
-
-    @FXML
-    public void initialize() {
-        loadRandomVerseAndImage();
-    }
 
     private void loadRandomVerseAndImage() {
         int index = new Random().nextInt(verses.size());
@@ -52,6 +60,7 @@ public class VerseOfTheDayController {
             System.err.println("Image not found at: " + imagePaths.get(index));
         }
     }
+
     @FXML
     private void onNextVerseClick() {
         loadRandomVerseAndImage();

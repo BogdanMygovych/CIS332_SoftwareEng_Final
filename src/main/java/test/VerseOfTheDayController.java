@@ -25,7 +25,7 @@ public class VerseOfTheDayController {
 
 
         javafx.application.Platform.runLater(() -> {
-            Scene scene = verseText.getScene(); 
+            Scene scene = verseText.getScene();
             if (scene != null) {
                 UserSession.applySettings(scene);
             }

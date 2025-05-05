@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="test.Settings"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="test.SettingsController"
+      spacing="15" alignment="CENTER" style="-fx-padding: 20;">
 
+    <Label text="Settings" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
 
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Change Username:" />
+        <TextField fx:id="nameField" promptText="Enter new name..." />
+        <Button text="Update Name" onAction="#onUpdateNameClick" styleClass="menu-button"/>
+    </HBox>
 
-</AnchorPane>
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Theme:" />
+        <Button text="Light Mode" onAction="#onLightModeClick" styleClass="menu-button" />
+        <Button text="Dark Mode" onAction="#onDarkModeClick" styleClass="menu-button"/>
+    </HBox>
 
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Font Color:" />
+        <ColorPicker fx:id="fontColorPicker" onAction="#onFontColorChange" styleClass="menu-button"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Background Color:" />
+        <ColorPicker fx:id="backgroundColorPicker" onAction="#onBackgroundColorChange" styleClass="menu-button"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Font Size:" />
+        <Slider fx:id="fontSizeSlider" min="10" max="40" value="14" onMouseReleased="#onFontSizeChange" />
+    </HBox>
+    <Button text="Home" onAction="#onHomeClick" styleClass="home-button"/>
+</VBox>

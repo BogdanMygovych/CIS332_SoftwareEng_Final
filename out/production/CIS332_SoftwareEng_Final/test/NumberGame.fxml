@@ -16,3 +16,4 @@
     <Label fx:id="feedbackLabel" text="" />
     <Button text="Home" onAction="#onHomeClick" styleClass="home-button"/>
 </VBox>
+

@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="test.NumberGame"
-            prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="test.NumberGameController"
+      spacing="15" alignment="CENTER" style="-fx-padding: 20;">
+
+    <Label text="Number Guesser Game" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+    <Label fx:id="instructionLabel" text="Guess a number between 1 and 20" />
+    <TextField fx:id="guessInput" promptText="Enter your guess..." />
+    <Button text="Submit Guess" onAction="#onSubmitGuess" styleClass="menu-button"/>
+    <Label fx:id="feedbackLabel" text="" />
+    <Button text="Home" onAction="#onHomeClick" styleClass="home-button"/>
+</VBox>
+

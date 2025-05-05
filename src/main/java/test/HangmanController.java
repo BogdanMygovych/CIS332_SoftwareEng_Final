@@ -38,8 +38,15 @@ public class HangmanController {
     @FXML
     public void initialize() {
         resetGame();
-    }
 
+        javafx.application.Platform.runLater(() -> {
+            Scene scene = wordDisplay.getScene();
+            if (scene != null) {
+                UserSession.applySettings(scene);
+
+            }
+        });
+    }
     private void resetGame() {
         guessedLetters.clear();
         wrongGuesses.clear();

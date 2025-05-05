@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="test.Sports"
-            prefHeight="400.0" prefWidth="600.0">
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="test.SportsController"
+      spacing="20" alignment="CENTER" prefWidth="800" prefHeight="600"
+      stylesheets="@../styles.css">
 
-</AnchorPane>
+    <Label text="Sports" styleClass="title"/>
+
+    <HBox spacing="20" alignment="CENTER">
+        <ComboBox fx:id="teamComboBox" promptText="Team: Select Team"/>
+        <ComboBox fx:id="statComboBox" promptText="Select Statistic"/>
+    </HBox>
+
+    <LineChart fx:id="statChart" title="Season Stats"
+               animated="true" legendVisible="false"
+               createSymbols="true">
+        <xAxis>
+            <CategoryAxis label="Match"/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Stat Value"/>
+        </yAxis>
+    </LineChart>
+
+    <Button text="Home" onAction="#onHomeClick" styleClass="home-button"/>
+</VBox>

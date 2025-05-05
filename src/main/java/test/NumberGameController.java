@@ -12,9 +12,12 @@ import java.util.Random;
 
 public class NumberGameController {
 
-    @FXML private TextField guessInput;
-    @FXML private Label feedbackLabel;
-    @FXML private Label instructionLabel;
+    @FXML
+    private TextField guessInput;
+    @FXML
+    private Label feedbackLabel;
+    @FXML
+    private Label instructionLabel;
 
     private int targetNumber;
 

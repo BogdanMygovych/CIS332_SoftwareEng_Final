@@ -92,7 +92,7 @@ public class SettingsController {
                 (int)(color.getBlue() * 255)
         );
 
-        // Apply only to text-supporting controls
+
         if (node instanceof Labeled labeled) {
             labeled.setStyle("-fx-text-fill: " + hexColor + ";");
         } else if (node instanceof TextInputControl textInput) {

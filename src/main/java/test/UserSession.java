@@ -11,7 +11,7 @@ public class UserSession {
     private static boolean darkMode = false;
     private static Color fontColor = Color.BLACK;
     private static double fontSize = 14.0;
-    private static Color backgroundColor = null; // New
+    private static Color backgroundColor = null;
 
     public static void setNickname(String name) {
         nickname = name;
@@ -59,7 +59,7 @@ public class UserSession {
         StringBuilder style = new StringBuilder();
         style.append("-fx-font-size: ").append(fontSize).append("px;");
 
-        // Use custom background color if provided
+
         if (backgroundColor != null) {
             String bgHex = String.format("#%02x%02x%02x",
                     (int) (backgroundColor.getRed() * 255),
